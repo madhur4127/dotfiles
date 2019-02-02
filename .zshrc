@@ -97,6 +97,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias nvim="~/bin/nvim/nvim.appimage"
+alias nvim="~/bin/nvim.appimage"
 export TERM="xterm-256color"
 source "$HOME/.vim/gruvbox_256palette.sh"
+alias texstudio="~/bin/texstudio-2.12.14-x86_64.AppImage"
+
