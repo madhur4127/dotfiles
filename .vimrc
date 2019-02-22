@@ -9,6 +9,7 @@ set shiftwidth=4
 set nowrap
 set autowrite
 set number relativenumber
+set autoindent
 
 " Theme
 set termguicolors
