@@ -1,14 +1,13 @@
 set nocompatible " be iMproved, required
 filetype detect  " required
 syntax on
-set tabstop=4
 set shiftwidth=4
 set tabstop=4
-set shiftwidth=4
 set nowrap
 set autowrite
 set number relativenumber
 set autoindent
+filetype plugin indent on
 
 " Compiling C++
 set makeprg=make\ -f\ ~/makefile\ %<
