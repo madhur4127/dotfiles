@@ -33,7 +33,7 @@ function! Formatonsave()
   let l:formatdiff = 1
   pyf /usr/local/etc/clang-format.py
 endfunction
-autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
+autocmd InsertLeave *.h,*.cc,*.cpp call Formatonsave()
 
 " Save using \s
 noremap <Leader>s :update<CR>
