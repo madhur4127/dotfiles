@@ -6,21 +6,33 @@ set shiftwidth=4 "number of spaces used for each step of (auto)indent
 set softtabstop=4  "if non-zero, number of spaces to insert for a <Tab>
 set noexpandtab
 set nosmarttab "a <Tab> in an indent inserts 'shiftwidth' spaces
+set autowrite
 
 set nowrap
 set number relativenumber
 filetype plugin indent on
 
+" Keymaps for compiling, testing, running
+" F5: compile (C/C++)
+" F6: Run with input "< in"
+" F7: Run without input
+" F8: Compile for optimizations using -O2
+
 " Compiling C++
-set makeprg=make\ -f\ ~/makefile\ %<
+set makeprg=make\ -f\ ~/makefile\ %<\ EXTRA_CFLAGS=-fcolor-diagnostic
 noremap <F5> :make<CR>
-noremap <F6> :!time timeout 5s ./%< < in<CR>
+noremap <F8> :!clang++ -std=c++14 % -o %< -Ofast<CR>
+
 
 " Cycling through errors
 nnoremap <F9> :cnext<CR>
 nnoremap <F10> :cprev<CR>
 
-" Run 
+" Run with input
+autocmd FileType c,cpp noremap <buffer> <F6> :!time timeout 5s ./%< <in<CR>
+autocmd FileType python noremap <buffer> <F6> :!time timeout 5s python % <in<CR>
+
+" Run without input
 autocmd FileType c,cpp noremap <buffer> <F7> :!./%< <CR>
 autocmd FileType python noremap <buffer> <F7> :!python % <CR>
 
