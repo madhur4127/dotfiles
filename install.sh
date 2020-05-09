@@ -19,7 +19,7 @@ popd
 
 # Better syntax highlighting in C++: vim-cpp-enhanced-highlight
 mkdir -p ~/.vim/after/syntax/
-wget https://raw.githubusercontent.com/octol/vim-cpp-enhanced-highlight/master/after/syntax/cpp.vim -O ~/.vim/after/syntax/c.vim
+wget https://raw.githubusercontent.com/octol/vim-cpp-enhanced-highlight/master/after/syntax/c.vim -O ~/.vim/after/syntax/c.vim
 wget https://raw.githubusercontent.com/octol/vim-cpp-enhanced-highlight/master/after/syntax/cpp.vim -O ~/.vim/after/syntax/cpp.vim
 
 ###################### SYMLINKS #####################
