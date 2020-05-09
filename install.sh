@@ -1,7 +1,11 @@
 #!/usr/bin/zsh
 
-# Install vim plug (Plugin Manager)
+# Before running this: make sure you have installed zsh, git, gcc, cmake, curl
+####################### ZSH ########################
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+####################### VIM ########################
+# Install vim plug (Plugin Manager)
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -14,7 +18,10 @@ pushd ~/.vim/plugged/YouCompleteMe
 popd
 
 # Better syntax highlighting in C++: vim-cpp-enhanced-highlight
-git clone https://github.com/octol/vim-cpp-enhanced-highlight.git /tmp/vim-cpp-enhanced-highlight
 mkdir -p ~/.vim/after/syntax/
-mv /tmp/vim-cpp-enhanced-highlight/after/syntax/cpp.vim ~/.vim/after/syntax/cpp.vim
-rm -rf /tmp/vim-cpp-enhanced-highlight
+wget https://raw.githubusercontent.com/octol/vim-cpp-enhanced-highlight/master/after/syntax/cpp.vim -O ~/.vim/after/syntax/c.vim
+wget https://raw.githubusercontent.com/octol/vim-cpp-enhanced-highlight/master/after/syntax/cpp.vim -O ~/.vim/after/syntax/cpp.vim
+
+###################### SYMLINKS #####################
+ln -s "$(pwd)/.vimrc" ~/.vimrc
+ln -s "$(pwd)/.zshrc" ~/.zshrc
