@@ -12,11 +12,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # To install plugins using vim-plug, type:
 # :PlugInstall
 
-# Let's set up YouCompleteMe
-pushd ~/.vim/plugged/YouCompleteMe
-./install.py --clangd-completer
-popd
-
 # Better syntax highlighting in C++: vim-cpp-enhanced-highlight
 mkdir -p ~/.vim/after/syntax/
 wget https://raw.githubusercontent.com/octol/vim-cpp-enhanced-highlight/master/after/syntax/c.vim -O ~/.vim/after/syntax/c.vim
